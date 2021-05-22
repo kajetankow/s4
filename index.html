@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator ram </title>
+    
+ 
+</head>
+<style>
+input{
+    background-color: #aad5ec;
+    font-size: 30px;
+    font-family:monospace;
+    padding: 5px 32px;
+    display: inline-block;
+    border: 8px solid #505050;
+    margin-top: 10px;
+    }
+    #wynik{
+        display: inline-block;
+        border: 8px solid #505050;
+        padding: 5px 32px;
+        background-color: cornsilk;
+        font-size: 30px;
+        min-width: 260px;
+        border-radius: 0px;
+
+    }
+    #content
+	{
+		
+		font-family: 'PT Sans Narrow', sans-serif;
+		width: 450px;
+		margin-left: auto;
+		margin-right: auto;
+        margin-top: 10%;
+		background-color:rgb(86, 163, 214);
+        min-height: 500px
+        
+    
+        
+        
+    }
+    button{
+        background-color: #2f80ad;
+    border-radius: 40px;
+    font-size: 20px;
+    font-family:monospace;
+    padding: 5px 12px;
+    display: inline-block;
+    border: 5px solid #12234a;
+    }
+    h3{
+        font-family: sans-serif;
+    color: rgb(61, 93, 219);
+    text-align: center;
+    position: relative;
+	font-size: 18px;
+    letter-spacing: 5px;
+    background-color: rgb(255, 255, 255);
+    }
+    body{
+        background-image: url("img/1.png");
+    }
+    .slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 1px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+p{font-size: 10px;}
+        
+    
+</style>
+ 
+<body>
+   <div id="content" >
+    <center>
+       <h3>KALKULATOR ROZMIARÓW <br>RAM ROWEROWYCH</h3> 
+       <p><em>Przesuń suwak lub wpisz swój wzrost</em></p>
+    
+    <input type="text" id="text" value="155" size="10">
+    </br>
+ <div class="range">
+    <input type="range" min="155" max="200" value="1" id="range" class="slider">
+</div>
+    <br>
+    <br>
+    <button id="wynik" disabled><strong>=</strong></button>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    
+    <button onclick="f()"><strong>MTB</strong></button>
+    <button onclick="g()"><strong>CROSS/TREKKING</strong></button><br><br>
+    <button onclick="i()"><strong>DAMKA ANTYMATERIA</strong></button>
+    <button onclick="h()"><strong>SZOSA</strong></button>
+    
+    </center>
+    </div>
+    <script>
+        
+const range = document.querySelector('#range')
+const text = document.querySelector('#text')
+range.addEventListener('input', function(){
+     text.value = range.value
+    })
+text.addEventListener('input', function(){
+    range.value = text.value
+})
+    </script>
+    <script>
+
+
+        function f() {
+ 
+            var a = document.getElementById("range").value;
+            a = parseFloat(a);
+            
+            var c = 0;
+            if(a<155){
+            document.getElementById("wynik").innerHTML = "Rower dziecięcy";
+            }
+            if(a>=155&&a<=164){document.getElementById("wynik").innerHTML = "15 cali";}
+            if(a>164&&a<180){document.getElementById("wynik").innerHTML = "17 cali";}
+            if(a>=180&&a<=184){document.getElementById("wynik").innerHTML = "19 cali";}
+            if(a>184&&a<=192){document.getElementById("wynik").innerHTML = "21 cali";}
+            if(a>192){document.getElementById("wynik").innerHTML = "23 cale";}
+        }
+        function g() {
+ 
+ var a = document.getElementById("range").value;
+ a = parseFloat(a);
+ 
+ var c = 0;
+ if(a<155)
+ document.getElementById("wynik").innerHTML = "Rower dziecięcy";
+ if(a>=155&&a<=164){document.getElementById("wynik").innerHTML = "15 ";}
+            if(a>164&&a<=174){document.getElementById("wynik").innerHTML = "17 ";}
+            if(a>174&&a<=182){document.getElementById("wynik").innerHTML = "19 ";}
+            if(a>183&&a<=192){document.getElementById("wynik").innerHTML = "21 ";}
+            if(a>192){document.getElementById("wynik").innerHTML = "23 ";}
+}
+function h() {
+ 
+ var a = document.getElementById("range").value;
+ a = parseFloat(a);
+ 
+ var c = 0;
+ if(a<155)
+            document.getElementById("wynik").innerHTML = "Rower dziecięcy";
+            if(a>=155&&a<=159){document.getElementById("wynik").innerHTML = "48cm ";}
+            if(a>159&&a<=164){document.getElementById("wynik").innerHTML = "50cm";}
+            if(a>164&&a<=169){document.getElementById("wynik").innerHTML = "52cm ";}
+            if(a>169&&a<=177){document.getElementById("wynik").innerHTML = "54cm ";}
+            if(a>177&&a<=187){document.getElementById("wynik").innerHTML = "56cm ";}
+            if(a>187&&a<=190){document.getElementById("wynik").innerHTML = "58cm ";}
+            if(a>190&&a<=195){document.getElementById("wynik").innerHTML = "58cm ";}
+            if(a>195){document.getElementById("wynik").innerHTML = "62cm ";}
+}
+function i() {
+ 
+ var a = document.getElementById("range").value;
+ a = parseFloat(a);
+ 
+ var c = 0;
+ if(a<155)
+            document.getElementById("wynik").innerHTML = "Rower dziecięcy";
+            if(a>=155&&a<=164){document.getElementById("wynik").innerHTML = "S";}
+            if(a>164&&a<=177){document.getElementById("wynik").innerHTML = "M";}
+            if(a>177&&a<=190){document.getElementById("wynik").innerHTML = "L";}
+            if(a>190){document.getElementById("wynik").innerHTML = "max wzrost 190cm ";}
+}
+ 
+    </script>
+</body>
+ 
+
+</html>
